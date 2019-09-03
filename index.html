@@ -12,84 +12,126 @@
                 padding: 0;
                 box-sizing: border-box;
             }
-            body:before
+
+            body
             {
-                content: "";
-                height: 1.25rem;
-                display: block;
-                background: linear-gradient(to right, #ff3399, #808080);
+                font-family: system-ui, Helvetica, Arial, sans-serif;
             }
-            header
-            {
-                padding-top: 5rem;
-                padding-bottom: 1rem;
-            }
-            .container
+
+            #container
             {
                 width: 90%;
-                max-width: 800px;
-                margin: auto;
+                max-width: 650px;
+                margin: 3rem auto;
+                padding: 2.5rem 0;
             }
-            #logo
+
+            h1, h2, h3
             {
-                width: 100%;
-                max-width: 700px;
-                margin: auto;
-                display: block;
+                color: #333;
             }
-            section
-            {
-                margin: 4rem 0;
-            }
-            h2, h3, p
-            {
-                font-family: Poppins, Helvetica, sans-serif;
-            }
-            h2
+
+            h1
             {
                 font-size: 2.5rem;
-                color: #232323;
+                margin-bottom: .5rem;
             }
-            p
+
+            .global-title
             {
-                font-size: 1.25rem;
+                font-size: 3rem;
+                color: #222;
+            }
+
+            h2
+            {
+                font-size: 1.8rem;
+            }
+
+            h3
+            {
+                font-size: 1.3rem;
+            }
+
+            h2, h3
+            {
+                margin: 2rem 0 1rem;
+            }
+
+            p, li
+            {
+                font-size: 1rem;
                 line-height: 150%;
-                margin: 1rem 0;
-                color: #343434;
+                color: #444;
+                margin: 1.25rem 0;
             }
-            iframe
-            {
-                width: 100%;
-                height: 900px;
-                margin-top: 2rem;
-            }
+
             li
             {
-                list-style: none;
-                width: 50%;
+                margin: .5rem 0;
             }
-            #team-members
+
+            a
             {
-                display: flex;
-                flex-wrap: wrap;
-                margin-top: 1rem;
+                color: #b00;
             }
-            footer
+
+            a:hover, a:active
+            {
+                color: #d00;
+            }
+
+            #portrait
+            {
+                width: 6rem;
+                height: 6rem;
+                border-radius: 4rem;
+                float: left;
+                margin-right: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            li
+            {
+                margin-left: 2.5rem;
+            }
+
+            nav
             {
                 margin-bottom: 3rem;
             }
-            footer p
+
+            nav li
             {
-                font-size: 1rem;
-                color: #444;
+                list-style: none;
+                display: inline-block;
+                margin: 0;
             }
-            h3
+
+            nav a
             {
-                font-size: 1.75rem;
+                margin-right: 1rem;
             }
-            li p
+
+            img
             {
-                margin-top: .25rem;
+                max-width: 100%;
+            }
+
+            .two-col
+            {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 1rem;
+                margin-bottom: 1rem;
+            }
+            @media (max-width: 40rem)
+            {
+                .two-col
+                {
+                    grid-template-columns: 1fr;
+                    grid-row-gap: 1rem;
+                }
             }
         </style>
     </head>
@@ -111,8 +153,9 @@
                 Find me!
             </h2>
             <ul>
-                <li>"Email: "<a href = "mailto:jeff.zw07@gmail.com"></a></li>
-                <li>"Facebook: "<a href = "https://www.facebook.com/jeffduwang">@jeffduwang</a></li>
+                <li>
+                    "Facebook: " <a href = "https://www.facebook.com/jeffduwang">@jeffduwang</a>
+                </li>
             </ul>
         </div>
     </body>
