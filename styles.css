@@ -21,7 +21,7 @@ body {
 
 h1, h2, h3
 {
-    color: rgb(201, 201, 201);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 h1
@@ -33,7 +33,7 @@ h1
 .global-title
 {
     font-size: 3rem;
-    color: rgb(230, 230, 230);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 h2
@@ -55,7 +55,7 @@ p, li
 {
     font-size: 1rem;
     line-height: 150%;
-    color: rgb(190, 190, 190);
+    color: rgba(255, 255, 255, 0.9);
     margin: 1.25rem 0;
 }
 
@@ -71,7 +71,7 @@ a
 
 a:hover, a:active
 {
-    color: #64b3f4;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 #portrait
