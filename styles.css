@@ -11,6 +11,10 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+img {
+    border-radius: 16px;
+}
+
 #container
 {
     width: 90%;
@@ -24,26 +28,27 @@ h1, h2, h3
     color: rgba(255, 255, 255, 0.9);
 }
 
-h1
+.logo
 {
-    font-size: 2.5rem;
-    margin-bottom: .5rem;
+    color: #82b2ff;
+    font-size: 10rem;
+    margin-bottom: 2rem;
 }
 
-.global-title
+h1
 {
-    font-size: 3rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
 }
 
 h2
 {
-    font-size: 1.8rem;
+    font-size: 1rem;
 }
 
 h3
 {
-    font-size: 1.3rem;
+    font-size: 0.5rem;
 }
 
 h2, h3
@@ -66,12 +71,12 @@ li
 
 a
 {
-    color: #006ab0;
+    color: #82b2ff;
 }
 
 a:hover, a:active
 {
-    color: #007bcc;
+    color: #c4dbff;
 }
 
 #portrait
