@@ -131,3 +131,19 @@ img
         grid-row-gap: 1rem;
     }
 }
+
+title span {
+    animation-name: randomNT;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+@keyframes randomNT {
+    from {
+        color: var(blue);
+    }
+    to {
+        color: var(red);
+    }
+}
