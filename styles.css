@@ -23,6 +23,12 @@ img {
     padding: 2.5rem 0;
 }
 
+.inline-container {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+}
+
 h1, h2, h3
 {
     color: rgba(255, 255, 255, 0.9);
@@ -53,7 +59,7 @@ h3
 
 h2, h3
 {
-    margin: 2rem 0 1rem;
+    margin-top: 1rem;
 }
 
 p, li
@@ -61,7 +67,7 @@ p, li
     font-size: 1rem;
     line-height: 150%;
     color: rgba(255, 255, 255, 0.9);
-    margin: 1.25rem 0;
+    margin-top: 1rem;
 }
 
 li
@@ -114,6 +120,28 @@ nav a
 img
 {
     max-width: 100%;
+}
+
+#dna-text {
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    white-space: pre;
+}
+
+#dna-text span {
+    transition: color 0.3s ease-in-out;
+}
+
+/* Colors for each nucleotide */
+.nucleotide-A { color: #4ade80; }
+.nucleotide-T { color: #f87171; }
+.nucleotide-C { color: #60a5fa; }
+.nucleotide-G { color: #facc15; }
+
+.revealed {
+    color: white;
 }
 
 .two-col

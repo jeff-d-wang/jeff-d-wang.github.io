@@ -11,34 +11,115 @@
 
     <body data-gr-c-s-loaded = "true" style="background-color:rgb(41, 41, 41);">
         <div id = "container">
-            <img src="images/head.jpeg" alt="Me" width="192" height="192">
-            <h1>Jeffrey Wang</h1>
+            <img src="images/belgium.jpeg" alt="Me" width="192" height="192">
+
+            <h1 id="dna-text"></h1>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const textElement = document.getElementById('dna-text');
+                    const targetWord = "Jeffrey Wang";
+                    const nucleotides = ['A', 'T', 'C', 'G'];
+
+                    const initialDelay = 80; // Start with 80ms delay
+                    const slowdownFactor = 30; // Add 30ms for each character revealed
+                    
+                    const characterSpans = []; 
+                    const revealOrder = [];
+                    
+                    // Each character gets a span
+                    for (let i = 0; i < targetWord.length; i++) {
+                        const span = document.createElement('span');
+                
+                        if (targetWord[i] === ' ') {
+                            span.innerHTML = ' ';
+                            span.className = 'revealed';
+                        } else {
+                            span.dataset.finalChar = targetWord[i];
+                            revealOrder.push(i);
+                        }
+
+                        textElement.appendChild(span);
+                        characterSpans.push(span);
+                    }
+                    
+                    // Shuffle the reveal order
+                    for (let i = revealOrder.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [revealOrder[i], revealOrder[j]] = [revealOrder[j], revealOrder[i]];
+                    }
+
+                    const animationInterval = setInterval(() => {
+                        characterSpans.forEach(span => {
+                            // If not yet revealed, animate it
+                            if (!span.classList.contains('revealed')) {
+                                const randomNucleotide = nucleotides[Math.floor(Math.random() * nucleotides.length)];
+                                span.textContent = randomNucleotide;
+                                // Assign color class
+                                span.className = `nucleotide-${randomNucleotide}`;
+                            }
+                        });
+                    }, 1000 / 10); // Runs 10 times per second
+
+                    function revealNextCharacter() {
+                        // If no characters are left, stop
+                        if (revealOrder.length === 0) {
+                            clearInterval(animationInterval);
+                            return;
+                        }
+                        
+                        // Reveal one character
+                        const indexToReveal = revealOrder.shift();
+                        const span = characterSpans[indexToReveal];
+                        span.textContent = span.dataset.finalChar;
+                        span.className = 'revealed';
+
+                        // How many characters have been revealed so far
+                        const charsRevealed = targetWord.length - revealOrder.length;
+                        
+                        // Calculate delay for the next character
+                        const nextDelay = initialDelay + (charsRevealed * slowdownFactor);
+                        
+                        // Schedule the next reveal
+                        setTimeout(revealNextCharacter, nextDelay);
+                    }
+                    
+                    // Start the reveal chain
+                    setTimeout(revealNextCharacter, initialDelay);
+                });
+            </script>
+
             <p>
-                Hi I'm Jeffrey Wang and I'm a second year Computer Science (AI Track) and Biology student at Northeastern University!
-                I'm interested in computational biology/bioinformatics and making software for healthcare.
+                I'm a first year MS student studying Computational Biology at Carnegie Mellon University, 
+                interested in cancer biology, machine learning, big data representation, and user oriented design.
             </p>
             <p>
-                I develop software for <a href = "https://www.northeasternrover.com/" target="_blank">NURover</a>'s Life Detection department,
-                TA for CS2510, play waterpolo, and play Valorant for NU Red.
-            </p>    
-            <h2 id = "wiutn">What I'm Up To Now:</h2>
-            <p>
-                I'm an incoming intern at Verve Therapeutics.
+                I like <a href = "https://www.instagram.com/cmuwaterpolo" target="_blank">waterpolo</a>,
+                rock climbing, cooking, reading, and walking a lot.
             </p>
+            
+            <div class="inline-container">
+                <h2 id="wnow">What's now:</h2>
+                <p>Studying and eating.</p>
+            </div>
+            
+            <div class="inline-container">
+                <h2 id="wnext">What's next:</h2>
+                <p>Update this page in another 2 years lol.</p>
+            </div>
 
             <h2 id = "links">Links</h2>
             <ul>
                 <li>
-                    <a href = "mailto:wang.jef@northeastern.edu?Subject=Heading%20/ Title" target="_top">Email (wang.jef@northeastern.edu)</a>
+                    <a href = "mailto:jdw2@andrew.cmu.edu?Subject=Heading%20/ Title" target="_top">Email (jdw2@andrew.cmu.edu)</a>
                 </li>
                 <li>
-                    <a href = "https://www.linkedin.com/in/jeffrey-wang-3381b2187/" target="_blank">LinkedIn</a>
+                    <a href = "https://www.linkedin.com/in/jeffrey-d-wang" target="_blank">LinkedIn</a>
                 </li>
                 <li>
-                    <a href = "https://github.com/jeff-d-wang" target="_blank">Github</a>
+                    <a href = "Jeffrey_Wang_Resume_CB.pdf" target="_blank">Resume</a>
                 </li>
                 <li>
-                    <a href = "Jeffrey_Wang_Resume.pdf" target="_blank">Resume</a>
+                    <a href = "https://github.com/jeff-d-wang" target="_blank">Github</a>   
                 </li>
                 <li>
                     <a href = "https://www.instagram.com/jeffreydwang/" target="_blank">Instagram</a>
